@@ -67,8 +67,8 @@ def main():
                 # You can add more feature engineering options here
 
                 # Save the cleaned data in session state
-                st.session_state["cleaned_data"] = cleaned_data
-                st.session_state["data"] = data
+        st.session_state["cleaned_data"] = cleaned_data
+        st.session_state["data"] = data
 
 
 if __name__ == "__main__":
