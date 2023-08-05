@@ -46,12 +46,12 @@ with st.container():
                                                     ['REMOVAL OF MISSING VALUES','IMPUTATION','FORWARD/BACKWARD FILL','PREDICTION MODELS'])
 
 # Original Data Summary
-if missing_value_summary == "Original Data":
+if missing_value_summary == "Oreignal Data Summary":
     perform_eda(data)
     handle_missing_values(data)
 
 # Cleaned Data Summary
-if missing_value_summary == "Cleaned Data":
+if missing_value_summary == "Cleaned Data Summary":
     perform_eda(cleaned_data)
     handle_missing_values(cleaned_data)
 
