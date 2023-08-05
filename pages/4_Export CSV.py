@@ -26,3 +26,5 @@ st.download_button(
   file_name='export.csv',
   mime='text/csv',
 )
+
+st.session_state["cleaned_data"] = cleaned_data
