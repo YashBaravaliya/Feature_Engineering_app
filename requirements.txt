@@ -6,3 +6,6 @@ pandas_profiling
 streamlit_pandas_profiling
 scikit-learn
 sklearn
+ipywidgets
+pandas-profiling streamlit
+
