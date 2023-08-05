@@ -28,25 +28,22 @@ def perform_eda(data):
 
     
 
+
+st.title("Handle Missing Values 🧩")
+
+# st.sidebar.header("Handle Missing Values")
+
 with st.container():
     st.sidebar.header("Handel Missing values")
 
     sidebar = st.sidebar.selectbox("sadas",["Missing Value Summary",'Missing Value Technique'])
 
-st.title("Handle Missing Values 🧩")
+    if sidebar == "Missing Value Summary":
+        missing_value_summary = st.sidebar.selectbox("Missing Value Summary",["Oreignal Data Summary","Cleaned Data Summary"])
 
-st.sidebar.header("Handle Missing Values")
-
-# Original Data Summary
-if missing_value_summary == "Original Data":
-    perform_eda(data)
-
-if sidebar == "Missing Value Summary":
-    missing_value_summary = st.sidebar.selectbox("Summary for", ["Original Data", "Cleaned Data"])
-
-if sidebar == "Missing Value Technique":
-    missing_value_technique = st.sidebar.selectbox("Select Technique",
-                                                    ['Remove Missing Values', 'Imputation', 'Forward/Backward Fill', 'Prediction Models'])
+    if sidebar == "Missing Value Technique":
+        missing_value_technique = st.sidebar.selectbox("Handel Missing Values",
+                                                    ['REMOVAL OF MISSING VALUES','IMPUTATION','FORWARD/BACKWARD FILL','PREDICTION MODELS'])
 
 # Original Data Summary
 if missing_value_summary == "Original Data":
@@ -77,10 +74,10 @@ if missing_value_technique == "IMPUTATION":
 if missing_value_technique == "FORWARD/BACKWARD FILL":
 
     # Get the list of columns with missing values in the DataFrame
-    missing_columns = cleaned_data.columns[cleaned_data.isnull().any()].tolist()
+    missing_columns = cleaned_data.columns
 
     # Allow user to select a column from the dropdown (selectbox) with missing values
-    selected_column = st.selectbox("Select a column with missing values", missing_columns)
+    selected_column = st.multiselect("Select a column with missing values", missing_columns)
 
     # Allow user to select the method to fill missing values (forward fill or backward fill)
     fill_method = st.radio("Select method to fill missing values", ('ffill', 'bfill'))
