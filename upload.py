@@ -47,6 +47,10 @@ def main():
         data = pd.read_csv(upload_file_)
         cleaned_data = data.copy()
 
+        # Save the cleaned data in session state
+        st.session_state["cleaned_data"] = cleaned_data
+        st.session_state["data"] = data
+
         # Show the uploaded data
         with st.container():
             st.subheader("Uploaded Data")
@@ -66,9 +70,7 @@ def main():
 
                 # You can add more feature engineering options here
 
-                # Save the cleaned data in session state
-            st.session_state["cleaned_data"] = cleaned_data
-            st.session_state["data"] = data
+        
 
 
 if __name__ == "__main__":
