@@ -52,7 +52,7 @@ def drop_columns_missing(df):
         df_dropped = df.columns[df.isnull().mean() > percent]
         df1 = df.drop(df_dropped, axis=1)
         st.write(df1)
-        st.text(f"{df_dropped} columns dropped")
+        st.text(f"{df_dropped[0]} columns dropped")
         return df1
     return df
 
