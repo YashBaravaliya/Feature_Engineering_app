@@ -50,6 +50,7 @@ def main():
         # Save the cleaned data in session state
         st.session_state["cleaned_data"] = cleaned_data
         st.session_state["data"] = data
+        st.session_state["file_name"] = upload_file_.name
 
         # Show the uploaded data
         with st.container():
